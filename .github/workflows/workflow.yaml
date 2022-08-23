@@ -1,0 +1,28 @@
+name: calling other workflows
+
+on:
+ push:
+
+
+jobs:
+  # service-1:
+  #   uses: ./.github/workflows/service_1.yaml
+  # service-2:
+  #   uses: ./.github/workflows/service_2.yaml
+  # service-3:
+  #   uses: ./.github/workflows/service_3.yaml
+  # service-4:
+  #   uses: ./.github/workflows/service_4.yaml
+  checking_code:
+    runs-on: ubuntu-latest
+    name: Horusec Scan
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Run Horusec
+        id: run_horusec
+        uses: fike/horusec-action@v0.2.2
+        with:
+          # arguments: --config-file-path=horusec-config.json
+          arguments: -p ./ --log-level TRACE
+        
