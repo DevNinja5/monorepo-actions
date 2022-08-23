@@ -1,0 +1,35 @@
+name: calling other workflows
+
+on:
+ push:
+
+
+jobs:
+  # service-1:
+  #   name: service-1
+  #   runs-on: ubuntu-20.04
+  #   steps:
+  #     - uses: actions/checkout@v3
+
+  #     - uses: Rahul-Soni28/monorepo-actions/.github/workflows/service_1.yaml@1.0
+  service-2:
+    name: service-2
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: Rahul-Soni28/monorepo-actions@1.0/.github/workflows/service_1.yaml
+  # service-3:
+  #   name: service-3
+  #   runs-on: ubuntu-20.04
+  #   steps:
+  #     - uses: actions/checkout@v3
+
+  #     - uses: .github/workflows/service_3.yaml
+  # service-4:
+  #   name: service-4
+  #   runs-on: ubuntu-20.04
+  #   steps:
+  #     - uses: actions/checkout@v3
+
+  #     - uses: .github/workflows/service_4.yaml
