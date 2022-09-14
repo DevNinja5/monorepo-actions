@@ -20,11 +20,13 @@ jobs:
       - uses: actions/checkout@v3
       
       - name: Run Horusec
+        env:
+          WORKING_DIR: service_1
         id: run_horusec
         uses: fike/horusec-action@v0.2.2
         with:
-          path: ./service_1
-          arguments: -p ./ --config-file-path=horusec-config.json
+          arguments: -p ./$WORKING_DIR --config-file-path=$WORKING_DIR/horusec-config.json
 
       - run: |
           ls -l
+          ls -l service_1/
