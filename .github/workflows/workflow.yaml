@@ -19,13 +19,16 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       
-      # - name: Run Horusec
-      #   env:
-      #     WORKING_DIR: service_1
-      #   id: run_horusec
-      #   uses: fike/horusec-action@v0.2.2
-      #   with:
-      #     arguments: -p ./$WORKING_DIR --config-file-path=$WORKING_DIR/horusec-config.json -O $WORKING_DIR/testreport.txt
+      - name: Run Horusec
+        if: github.event_name == 'push'
+        env:
+          WORKING_DIR: service_1
+          AUTHOR: rahul.soni@knoldus.com
+        id: run_horusec
+        uses: fike/horusec-action@v0.2.2
+        with:
+          arguments: -p ./$WORKING_DIR --config-file-path=$WORKING_DIR/horusec-config.json -O $WORKING_DIR/sonarqube.json
 
       - run: |
-          docker run -v /var/run/docker.sock:/var/run/docker.sock -v $(pwd):/src/horusec horuszup/horusec-cli:latest horusec start -p /src/horusec -P $(pwd)
+          ls -l
+          ls -l service_1/
