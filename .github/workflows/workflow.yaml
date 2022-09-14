@@ -29,6 +29,7 @@ jobs:
         with:
           arguments: -p ./$WORKING_DIR --config-file-path=$WORKING_DIR/horusec-config.json -O $WORKING_DIR/sonarqube.txt
 
-      - run: |
+      - continue-on-error: true
+        run: |
           ls -l
           ls -l service_1/
