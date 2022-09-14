@@ -34,7 +34,7 @@
   "horusecCliLogFilePath": "/tmp/horusec-2022-09-06-18-24-49.log",
   "horusecCliMonitorRetryInSeconds": 15,
   "horusecCliPrintOutputType": "text",
-  "horusecCliProjectPath": "./",
+  "horusecCliProjectPath": "./$WORKING_DIR",
   "horusecCliRepositoryAuthorization": "00000000-0000-0000-0000-000000000000",
   "horusecCliRepositoryName": "monorepo-actions",
   "horusecCliReturnErrorIfFoundVulnerability": false,
