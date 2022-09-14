@@ -24,5 +24,5 @@ jobs:
         uses: fike/horusec-action@v0.2.2
         with:
           # arguments: --config-file-path=horusec-config.json
-          arguments: -p ./ --log-level TRACE
+          arguments: -p ./ --config-file-path=horusec-config.json
         
