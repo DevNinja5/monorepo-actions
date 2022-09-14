@@ -23,5 +23,8 @@ jobs:
         id: run_horusec
         uses: fike/horusec-action@v0.2.2
         with:
-          path: ./
+          path: ./service_1
           arguments: -p ./ --config-file-path=horusec-config.json
+
+      - run: |
+          ls -l
