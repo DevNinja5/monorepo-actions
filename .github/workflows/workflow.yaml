@@ -1,37 +1,37 @@
-name: calling other workflows
+# name: calling other workflows
 
-on:
- push:
+# on:
+#  push:
 
 
-jobs:
-  # service-1:
-  #   uses: ./.github/workflows/service_1.yaml
-  # service-2:
-  #   uses: ./.github/workflows/service_2.yaml
-  # service-3:
-  #   uses: ./.github/workflows/service_3.yaml
-  # service-4:
-  #   uses: ./.github/workflows/service_4.yaml
-  checking_code:
-    runs-on: ubuntu-latest
-    name: Horusec Scan
-    steps:
-      - uses: actions/checkout@v3
+# jobs:
+#   # service-1:
+#   #   uses: ./.github/workflows/service_1.yaml
+#   # service-2:
+#   #   uses: ./.github/workflows/service_2.yaml
+#   # service-3:
+#   #   uses: ./.github/workflows/service_3.yaml
+#   # service-4:
+#   #   uses: ./.github/workflows/service_4.yaml
+#   checking_code:
+#     runs-on: ubuntu-latest
+#     name: Horusec Scan
+#     steps:
+#       - uses: actions/checkout@v3
       
-      - name: Run Horusec
-        if: github.event_name == 'push'
-        env:
-          WORKING_DIR: service_1
-          AUTHOR: rahul.soni@knoldus.com
-        id: run_horusec
-        uses: fike/horusec-action@v0.2.2
-        with:
-          arguments: -p ./$WORKING_DIR --config-file-path=$WORKING_DIR/horusec-config.json -O $WORKING_DIR/sonarqube.json
+#       - name: Run Horusec
+#         if: github.event_name == 'push'
+#         env:
+#           WORKING_DIR: service_1
+#           AUTHOR: rahul.soni@knoldus.com
+#         id: run_horusec
+#         uses: fike/horusec-action@v0.2.2
+#         with:
+#           arguments: -p ./$WORKING_DIR --config-file-path=$WORKING_DIR/horusec-config.json -O $WORKING_DIR/sonarqube.json
 
-      - continue-on-error: true
-        run: |
-          ls -l
-          ls -l service_1/
+#       - continue-on-error: true
+#         run: |
+#           ls -l
+#           ls -l service_1/
 
     
