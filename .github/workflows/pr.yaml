@@ -6,10 +6,10 @@ jobs:
     uses: ./.github/workflows/service_1.yaml
 
   child-service-2:
-    uses: Rahul-Soni28/monorepo-actions/.github/workflows/service_2.yaml@master
+    uses: ./.github/workflows/service_2.yaml@master
 
   child-service-3:
-    uses: Rahul-Soni28/monorepo-actions/.github/workflows/service_3.yaml@master
+    uses: ./.github/workflows/service_3.yaml@master
 
   child-service-4:
-    uses: Rahul-Soni28/monorepo-actions/.github/workflows/service_4.yaml@master
+    uses: ./.github/workflows/service_4.yaml@master
