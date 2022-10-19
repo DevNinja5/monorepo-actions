@@ -4,6 +4,8 @@ jobs:
 
   child-service-1:
     uses: Rahul-Soni28/monorepo-actions/.github/workflows/service_1.yaml@master
+    with: 
+      branch: ${{ env.GITHUB_REF_NAME }}
 
   child-service-2:
     uses: Rahul-Soni28/monorepo-actions/.github/workflows/service_2.yaml@master

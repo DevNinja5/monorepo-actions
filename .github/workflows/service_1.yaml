@@ -6,8 +6,6 @@ jobs:
   build_service_1:
     name: Build Service 1
     runs-on: ubuntu-20.04
-    env:
-      branch: ${{ env.GITHUB_REF_NAME }}
     steps:
     - name: Checkout
       uses: actions/checkout@v2
