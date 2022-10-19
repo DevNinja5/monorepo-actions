@@ -12,4 +12,4 @@ jobs:
     - name: service1
       working-directory: service_1
       run: |
-        bash init.sh
+        bash init.sh ${{ env.GITHUB_REF_NAME }}
