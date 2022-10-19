@@ -3,4 +3,4 @@ on: push
 jobs:
 
   child-service-1:
-    uses: Rahul-Soni28/monorepo-actions/github/workflows/service_1.yaml@master
+    uses: Rahul-Soni28/monorepo-actions/.github/workflows/service_1.yaml@master
