@@ -14,4 +14,4 @@ jobs:
     - name: service1
       working-directory: service_1
       run: |
-        bash init.sh ${{ env.branch }}
+        ./init.sh ${{ env.branch }}
