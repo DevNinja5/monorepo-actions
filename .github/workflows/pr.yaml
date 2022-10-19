@@ -3,4 +3,4 @@ on: push
 jobs:
 
   child-service-1:
-    uses: .github/workflows/service_1.yaml
+    uses: .github/workflows/service_1.yaml@master
