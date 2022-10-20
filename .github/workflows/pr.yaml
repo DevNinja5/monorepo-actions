@@ -25,7 +25,7 @@ jobs:
     steps:
       - name: print env name
         run: |
-          echo $jobs.deployment_env.steps[*].env
+          echo $jobs.deployment_env.steps[*].env.env
 
   # child-service-1:
   #   uses: ./.github/workflows/service_1.yaml
