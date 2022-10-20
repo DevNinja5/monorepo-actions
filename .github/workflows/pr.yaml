@@ -12,10 +12,10 @@ jobs:
         run: |
           if [[ $branch -eq "master" ]]
           then 
-            export env=prod
+            export environment=prod
           elif [[ $branch -eq "develop" ]] 
           then
-            export env=qa
+            export environment=qa
           fi
 
 
@@ -25,7 +25,7 @@ jobs:
     steps:
       - name: print env name
         run: |
-          echo $jobs.deployment_env.steps[*].env.env
+          echo ${{ env.environment }}
 
   # child-service-1:
   #   uses: ./.github/workflows/service_1.yaml
