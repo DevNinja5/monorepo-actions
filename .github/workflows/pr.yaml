@@ -5,6 +5,8 @@ jobs:
 
   child-service-1:
     uses: ./.github/workflows/service_1.yaml
+    with:
+      branch: ${{ env.GITHUB_REF_NAME }}
 
   child-service-2:
     uses: ./.github/workflows/service_2.yaml

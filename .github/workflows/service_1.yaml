@@ -1,6 +1,10 @@
 name: service-1
 on:
   workflow_call:
+    inputs:
+      branch:
+        required: true
+        type: string
      
 jobs:
   build_service_1:
@@ -12,4 +16,4 @@ jobs:
     - name: service1
       working-directory: service_1
       run: |
-        ./init.sh ${{ env.branch }}
+        ./init.sh ${{ inputs.branch }}
