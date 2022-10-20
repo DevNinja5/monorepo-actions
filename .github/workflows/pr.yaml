@@ -9,15 +9,14 @@ jobs:
       branch: $GITHUB_REF_NAME
     steps:
       - name: env
+        id: env
         run: |
           if [[ $branch -eq "master" ]]
           then 
-            export environment=prod
-            echo prod
+            echo "ENVIRONMENT=prod" >> $GITHUB_OUTPUT
           elif [[ $branch -eq "develop" ]] 
           then
-            export environment=qa
-            echo qa
+            echo "ENVIRONMENT=qa" >> $GITHUB_OUTPUT
           fi
 
 
@@ -27,7 +26,7 @@ jobs:
     steps:
       - name: print env name
         run: |
-          echo ${{ env.environment }}
+          echo ${{ jobs.deployment_env.steps.env.outputs.ENVIRONMENT }}
 
   # child-service-1:
   #   uses: ./.github/workflows/service_1.yaml
