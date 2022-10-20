@@ -10,10 +10,12 @@ jobs:
     steps:
       - name: env
         run: |
-          if [ $branch -eq "master" ] then 
-          export env=prod
-          elif [ $branch -eq "develop" ] then
-          export env=qa
+          if [[ $branch -eq "master" ]]
+          then 
+            export env=prod
+          elif [[ $branch -eq "develop" ]] 
+          then
+            export env=qa
           fi
 
   child-service-1:
