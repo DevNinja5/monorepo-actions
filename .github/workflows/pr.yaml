@@ -6,7 +6,7 @@ jobs:
   deployment_env:
     runs-on: ubuntu-latest
     env: 
-      branch: ${{GITHUB_REF_NAME}}
+      branch: ${{ env.GITHUB_REF_NAME }}
     steps:
       - name: env
         run: |
