@@ -3,10 +3,23 @@ on: workflow_dispatch
 
 jobs:
 
+  deployment_env:
+    runs-on: ubuntu-latest
+    env: 
+      branch: $GITHUB_REF_NAME
+    steps:
+      - name: env
+        run: |
+          if [ $branch -eq "master" ] then 
+          export env=prod
+          elseif [ $branch -eq "develop" ] then
+          export env=qa
+          fi
+
   child-service-1:
     uses: ./.github/workflows/service_1.yaml
     with:
-      branch: $GITHUB_REF_NAME
+      branch: ${{ jobs.deployment_env.steps[*].env }}
 
   child-service-2:
     uses: ./.github/workflows/service_2.yaml
