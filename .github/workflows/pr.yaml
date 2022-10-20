@@ -13,9 +13,11 @@ jobs:
           if [[ $branch -eq "master" ]]
           then 
             export environment=prod
+            echo prod
           elif [[ $branch -eq "develop" ]] 
           then
             export environment=qa
+            echo qa
           fi
 
 
