@@ -1,15 +1,15 @@
-on: push
+on: workflow_dispatch
 
 jobs:
 
   child-service-1:
-    uses: Rahul-Soni28/monorepo-actions/.github/workflows/service_1.yaml@master
+    uses: ./.github/workflows/service_1.yaml
 
   child-service-2:
-    uses: Rahul-Soni28/monorepo-actions/.github/workflows/service_2.yaml@master
+    uses: ./.github/workflows/service_2.yaml
 
   child-service-3:
-    uses: Rahul-Soni28/monorepo-actions/.github/workflows/service_3.yaml@master
+    uses: ./.github/workflows/service_3.yaml
 
   child-service-4:
-    uses: Rahul-Soni28/monorepo-actions/.github/workflows/service_4.yaml@master
+    uses: ./.github/workflows/service_4.yaml
