@@ -14,6 +14,8 @@ jobs:
           export env=prod
           elseif [ $branch -eq "develop" ] then
           export env=qa
+          else 
+          echo
           fi
 
   child-service-1:
